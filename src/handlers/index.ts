@@ -13,3 +13,11 @@ export {
   type ImpactItem,
   type ImpactAnalysisResult,
 } from './impact-analysis.js';
+
+export {
+  QueryHandler,
+  type QueryOptions,
+  type QueryResultItem,
+  type QueryResponse,
+  type SemanticSearchResult,
+} from './query-handler.js';
