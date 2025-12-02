@@ -122,4 +122,16 @@ export class GitService {
       return null;
     }
   }
+
+  /**
+   * Execute raw git command safely
+   */
+  async raw(args: string[]): Promise<string> {
+    try {
+      return await this.git.raw(args);
+    } catch (error) {
+      logger.error({ error, args }, 'Failed to execute raw git command');
+      return '';
+    }
+  }
 }

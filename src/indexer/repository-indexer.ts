@@ -362,13 +362,19 @@ export class RepositoryIndexer {
         if (!targetFileEntityId) continue;
 
         // Create relationship from this file to imported file
-        // Note: GraphRAG should expose a createRelationship method, but for now we use metadata
-        // In production, you'd call: await this.graphrag.createRelationship(fileEntityId, targetFileEntityId, 'IMPORTS')
-        logger.debug(
-          { source: fileEntityId, target: targetFileEntityId, type: 'IMPORTS' },
-          'Would create IMPORTS relationship'
+        const created = await this.graphrag.createRelationship(
+          fileEntityId,
+          targetFileEntityId,
+          'IMPORTS'
         );
-        this.stats.relationshipsCreated++;
+
+        if (created) {
+          logger.debug(
+            { source: fileEntityId, target: targetFileEntityId, type: 'IMPORTS' },
+            'Created IMPORTS relationship'
+          );
+          this.stats.relationshipsCreated++;
+        }
       } catch (error) {
         logger.debug({ importNode, error }, 'Error creating import relationship');
       }

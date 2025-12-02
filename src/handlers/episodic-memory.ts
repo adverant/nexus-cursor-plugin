@@ -207,8 +207,8 @@ export class EpisodicMemoryHandler {
     endLine: number
   ): Promise<BlameInfo[]> {
     try {
-      // Use simple-git's raw command for blame
-      const blameOutput = await this.gitService['git'].raw([
+      // Use GitService's raw command for blame
+      const blameOutput = await this.gitService.raw([
         'blame',
         '-L',
         `${startLine},${endLine}`,

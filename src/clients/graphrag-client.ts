@@ -73,6 +73,26 @@ export class GraphRAGClient {
     }
   }
 
+  async createRelationship(
+    sourceId: string,
+    targetId: string,
+    relationshipType: string,
+    weight?: number
+  ): Promise<boolean> {
+    try {
+      await this.client.post('/api/relationships', {
+        source_entity_id: sourceId,
+        target_entity_id: targetId,
+        relationship_type: relationshipType,
+        weight: weight || 1.0,
+      });
+      return true;
+    } catch (error) {
+      logger.warn({ error, sourceId, targetId, relationshipType }, 'Failed to create relationship');
+      return false;
+    }
+  }
+
   async healthCheck(): Promise<boolean> {
     try {
       const response = await this.client.get('/health');
