@@ -1,0 +1,18 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  nexus-cursor-plugin:
+    build: .
+    stdin_open: true
+    tty: true
+    environment:
+      - NEXUS_API_KEY=${NEXUS_API_KEY}
+      - NEXUS_ENDPOINT=${NEXUS_ENDPOINT:-https://api.adverant.ai}
+      - LOG_LEVEL=${LOG_LEVEL:-info}
+    networks:
+      - nexus-network
+
+networks:
+  nexus-network:
+    external: true
