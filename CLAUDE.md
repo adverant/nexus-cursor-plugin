@@ -227,43 +227,21 @@ npm test
 
 ## Docker Build Policy
 
-### NEVER Build Docker Images Locally on Mac
+### Cross-Architecture Builds
 
-**ALL Docker builds MUST happen on the remote server (157.173.102.118)**
+When building Docker images for deployment:
+- Use `--platform linux/amd64` for production deployments
+- Use multi-stage builds for smaller images
+- Always tag images with version numbers
 
-**Why?**
-- Mac uses ARM64 architecture (Apple Silicon)
-- Production uses AMD64 architecture
-- Local builds create images that fail in production
-
-**Correct Process:**
+**Example Build Process:**
 ```bash
-# 1. Transfer source files to server
-scp -r ./project root@157.173.102.118:/tmp/build/
+# Build for production architecture
+docker buildx build --platform linux/amd64 -t nexus-service:latest .
 
-# 2. SSH into server and build there
-ssh root@157.173.102.118 << 'EOF'
-cd /tmp/build
-docker build -t nexus-service:latest .
-docker tag nexus-service:latest localhost:5000/nexus-service:latest
-docker push localhost:5000/nexus-service:latest
-EOF
-
-# 3. Deploy to Kubernetes
-ssh root@157.173.102.118 "k3s kubectl set image deployment/service service=localhost:5000/nexus-service:latest -n nexus"
+# Or use docker-compose
+docker-compose -f docker-compose.prod.yml build
 ```
-
----
-
-## Infrastructure Quick Reference
-
-| Task | Command |
-|------|---------|
-| SSH to build server | `ssh root@157.173.102.118` |
-| Check remote images | `ssh root@157.173.102.118 "docker images"` |
-| Deploy to k8s | `ssh root@157.173.102.118 "k3s kubectl set image ..."` |
-| Check pods | `ssh root@157.173.102.118 "k3s kubectl get pods -n nexus"` |
-| View logs | `ssh root@157.173.102.118 "k3s kubectl logs -f deployment/nexus-cursor-plugin -n nexus"` |
 
 ---
 
