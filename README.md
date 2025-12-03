@@ -11,45 +11,165 @@
   [![Tests](https://img.shields.io/badge/Tests-143%20passing-brightgreen)](.)
   [![MCP](https://img.shields.io/badge/MCP-1.0-purple)](https://modelcontextprotocol.io/)
 
-  **Version:** 1.1.0 | **Last Updated:** December 2, 2025
+  **Version:** 1.1.0 | **Last Updated:** December 3, 2025
 
-  [Features](#features) • [Quick Start](#quick-start) • [Documentation](#documentation) • [Contributing](#contributing)
+  [Why Nexus?](#why-nexus) • [Features](#features) • [Quick Start](#quick-start) • [Knowledge Circles](#knowledge-circles) • [Pricing](#pricing)
 </div>
 
 ---
 
-## Overview
+## Why Nexus?
 
-Nexus Cursor Plugin brings enterprise-grade code intelligence to Cursor IDE through the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/). Powered by [Adverant's](https://adverant.ai) GraphRAG knowledge graph, it provides deep codebase understanding, historical context from git history, and multi-model AI analysis.
+Most tools tell you **who** changed code. Nexus tells you **why**.
+
+| Traditional Tools | Nexus Cursor Plugin |
+|-------------------|---------------------|
+| Shows git blame (who, when) | Connects changes to **intent** via knowledge graph |
+| File history as a timeline | **Episodic memory** — understands evolution patterns |
+| Search by filename/text | **Semantic search** — understands what code *does* |
+| No prediction | **Impact analysis** — see ripple effects *before* you change |
+
+### The Knowledge Gap Problem
+
+Every codebase has tribal knowledge trapped in developers' heads:
+- *"Don't touch that file, it breaks everything"*
+- *"We tried that approach in 2022, here's why it failed"*
+- *"This workaround exists because of X edge case"*
+
+**Nexus captures this.** Every query, every explanation, every impact analysis builds your codebase's institutional memory. New team members get context that would take months to acquire.
+
+---
+
+## Open Source — Free Forever
+
+The full Nexus platform, MIT licensed, self-hosted. No artificial limits.
+
+### Included Free
+
+| Feature | Description |
+|---------|-------------|
+| **GraphRAG Search** | Semantic code search — understands *what* code does, not just text matching |
+| **Impact Analysis** | See every file, function, and test affected before you make changes |
+| **Episodic Memory** | Git history + AI context — understand *why* code evolved |
+| **File History** | Complete evolution timeline with commit correlation |
+| **Local Memory** | Your learnings persist locally across sessions |
+| **6-Language AST** | Deep parsing for TypeScript, JavaScript, Python, Go, Rust, Java |
+
+### Why Free?
+
+We believe every developer deserves intelligent code assistance. The Open Source tier isn't a demo — it's production-ready tooling that makes you faster today.
+
+---
 
 ## Features
 
-### 🧠 **Episodic Memory**
-Understand *WHY* code was written by analyzing git commit history and connecting changes to their original intent.
+### 🧠 Episodic Memory
+Understand *why* code was written by analyzing git commit history and connecting changes to their original intent. Not just blame — **context**.
 
-### 🔍 **Impact Analysis**
-See ripple effects before making changes. Know exactly which files, functions, and tests will be affected.
+### 🔍 Impact Analysis
+See ripple effects before making changes. Know exactly which files, functions, and tests will be affected — with **severity scoring**.
 
-### 💬 **Natural Language Queries**
+```
+@nexus analyze impact of changing UserService
+```
+
+Returns: Critical (2 files), High (5 files), Medium (12 files) — with exact locations.
+
+### 💬 Natural Language Queries
 Ask questions about your codebase in plain English and get accurate, context-aware answers.
 
-### 🤖 **Multi-Model AI**
-Powered by MageAgent with access to 30+ LLM models for optimal response quality.
+```
+@nexus where is authentication handled?
+@nexus why was the cache invalidation changed last month?
+@nexus find all API endpoints that modify user data
+```
 
-### 🛡️ **Security Scanning**
-Real-time vulnerability detection and security best practices analysis.
+### 🧪 AI Test Generation
 
-### 📊 **Multi-Language Support**
-Full support for TypeScript, JavaScript, Python, Go, Rust, and Java with tree-sitter parsing.
+Generate comprehensive test suites with a single command.
 
-## Pricing Tiers
+```
+@nexus generate tests for UserService
+```
 
-| Tier | Price | Features |
-|------|-------|----------|
-| **Open Source** | $0/mo | GraphRAG search, 50K queries/month, local memory |
-| **Shared Access** | $9/mo | + Knowledge Circles, BYOK MageAgent, cloud sync, plugin marketplace |
-| **Teams** | $199/mo | + SSO, admin controls, unlimited Knowledge Circles, priority support |
-| **Dedicated VPS** | $499/mo | + Dedicated infrastructure, unlimited queries, 99.95% SLA |
+- **6 Frameworks**: Jest, Vitest, pytest, Go testing, Rust, JUnit
+- **Context-Aware**: Analyzes your existing test patterns
+- **Smart Coverage**: Detects edge cases, generates mocks, estimates coverage
+
+### 🛡️ Security Scanning
+
+Real-time vulnerability detection across your dependency tree.
+
+```
+@nexus scan for vulnerabilities
+```
+
+- **8 Ecosystems**: npm, PyPI, Go, Cargo, Maven, Composer, RubyGems, NuGet
+- **CVE Tracking**: Severity levels, CVSS scores, fix recommendations
+- **OSV.dev Powered**: Industry-standard vulnerability database
+
+### 🤖 Multi-Agent AI (30+ Models)
+
+Not just one AI — an orchestra of specialized models.
+
+| Mode | What It Does |
+|------|--------------|
+| **Orchestration** | Routes your query to the optimal model automatically |
+| **Competition** | Multiple models solve the same problem, best answer wins |
+| **Collaboration** | Specialized agents (research, coding, review) work together |
+
+### 📊 Multi-Language Support
+Full AST parsing for TypeScript, JavaScript, Python, Go, Rust, and Java via tree-sitter.
+
+---
+
+## Knowledge Circles
+
+> *Available on Shared Access ($9/mo) and higher*
+
+Knowledge Circles transform individual learning into **team intelligence**.
+
+### How It Works
+
+```
+Developer A solves a tricky auth bug
+        ↓
+Nexus captures the context, solution, and reasoning
+        ↓
+Developer B asks "why does auth fail on refresh?"
+        ↓
+Nexus recalls Developer A's solution — instantly
+```
+
+### Three Pillars
+
+| Pillar | What It Does |
+|--------|--------------|
+| **Shared GraphRAG** | Your team's code knowledge automatically indexed and searchable across all members |
+| **Collective Learning** | Bug fixes, refactoring decisions, and architectural choices become team knowledge |
+| **Private & Secure** | Encrypted, isolated to your organization — your code intelligence never leaves your circle |
+
+### The ROI
+
+- **Onboarding**: New hires get months of context in days
+- **Consistency**: Same question = same answer, regardless of who asks
+- **Retention**: Knowledge stays when people leave
+- **Velocity**: Stop re-solving solved problems
+
+---
+
+## Pricing
+
+| Tier | Price | What You Get |
+|------|-------|--------------|
+| **Open Source** | $0/mo | Full platform, self-hosted. GraphRAG, Impact Analysis, Episodic Memory, Local Storage. MIT licensed. |
+| **Shared Access** | $9/mo | + Knowledge Circles, Cloud Sync, BYOK for 30+ LLMs, Plugin Marketplace access |
+| **Teams** | $199/mo | + SSO/SAML, Admin Controls, Unlimited Knowledge Circles, Priority Support, 99.95% SLA |
+| **Dedicated VPS** | $499/mo | + Dedicated Infrastructure, Unlimited Queries, Custom Integrations, 24/7 Support |
+
+[View full pricing details →](https://adverant.ai/pricing)
+
+---
 
 ## Quick Start
 
@@ -88,7 +208,11 @@ In Cursor chat, use `@nexus` to access tools:
 @nexus find authentication code
 @nexus why was this changed?
 @nexus analyze impact of changing UserService
+@nexus generate tests for PaymentService
+@nexus scan for vulnerabilities
 ```
+
+---
 
 ## Available Tools
 
@@ -98,8 +222,12 @@ In Cursor chat, use `@nexus` to access tools:
 | `nexus_index_repository` | Index the current repository for code intelligence |
 | `nexus_query` | Natural language codebase queries |
 | `nexus_explain_code` | Explain code with historical context |
-| `nexus_impact_analysis` | Analyze change ripple effects |
+| `nexus_impact_analysis` | Analyze change ripple effects with severity scoring |
 | `nexus_file_history` | Get file evolution timeline |
+| `nexus_security_scan` | Scan dependencies for vulnerabilities |
+| `nexus_generate_tests` | AI-powered test generation |
+
+---
 
 ## Configuration
 
@@ -108,6 +236,8 @@ In Cursor chat, use `@nexus` to access tools:
 | `NEXUS_API_KEY` | Your Adverant API key | Required |
 | `NEXUS_ENDPOINT` | API endpoint | `https://api.adverant.ai` |
 | `LOG_LEVEL` | Logging level | `info` |
+
+---
 
 ## Architecture
 
@@ -128,18 +258,26 @@ In Cursor chat, use `@nexus` to access tools:
 │                 Adverant Nexus Platform                      │
 │  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐    │
 │  │ GraphRAG │  │MageAgent │  │  Neo4j   │  │  Qdrant  │    │
-│  │ Service  │  │ Service  │  │  Graph   │  │ Vectors  │    │
+│  │ Service  │  │ (30+ LLMs)│  │  Graph   │  │ Vectors  │    │
 │  └──────────┘  └──────────┘  └──────────┘  └──────────┘    │
 └─────────────────────────────────────────────────────────────┘
 ```
 
+---
+
 ## BYOK (Bring Your Own Keys)
 
-Configure external API keys at [adverant.ai/settings/external-keys](https://adverant.ai/settings/external-keys):
+Configure your own API keys for maximum flexibility. Available on Shared Access and higher.
 
-- **OpenRouter** - Required for MageAgent multi-model orchestration
-- **Anthropic** - Optional, direct Claude access
-- **OpenAI** - Optional, direct GPT access
+**Configure at**: [adverant.ai/settings/external-keys](https://adverant.ai/settings/external-keys)
+
+| Provider | What You Get |
+|----------|--------------|
+| **OpenRouter** | Access to 30+ LLM models for multi-agent orchestration |
+| **Anthropic** | Direct Claude access (Claude 3.5 Sonnet, Opus) |
+| **OpenAI** | Direct GPT access (GPT-4o, o1) |
+
+---
 
 ## Development
 
@@ -175,17 +313,12 @@ nexus-cursor-plugin/
 ├── src/
 │   ├── server.ts              # MCP server implementation
 │   ├── types.ts               # TypeScript type definitions
-│   ├── indexer/               # Repository indexing
-│   │   └── repository-indexer.ts
-│   ├── parsers/               # Language parsers
-│   │   ├── tree-sitter-service.ts
-│   │   └── language-configs.ts
+│   ├── clients/               # GraphRAG & MageAgent clients
+│   ├── handlers/              # Query, Impact, Episodic Memory
+│   ├── tools/                 # Security Scanner, Test Generator
+│   ├── parsers/               # Tree-sitter AST parsing
 │   ├── git/                   # Git integration
-│   │   └── git-service.ts
-│   ├── graphrag/              # GraphRAG client
-│   │   └── graphrag-client.ts
 │   └── __tests__/             # Test suites
-├── examples/                  # Usage examples
 ├── docs/                      # Documentation
 └── README.md
 ```
@@ -203,13 +336,16 @@ npm run test:coverage
 npm test -- src/__tests__/unit/server.test.ts
 ```
 
+---
+
 ## Documentation
 
-- [Implementation Plan](docs/IMPLEMENTATION_PLAN.md)
 - [API Reference](https://docs.adverant.ai/cursor-plugin/api)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Changelog](CHANGELOG.md)
+
+---
 
 ## Contributing
 
@@ -225,12 +361,16 @@ We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) f
 6. Push to your fork (`git push origin feature/amazing-feature`)
 7. Open a Pull Request
 
+---
+
 ## Support
 
 - **Documentation**: [docs.adverant.ai](https://docs.adverant.ai)
 - **Issues**: [GitHub Issues](https://github.com/adverant/nexus-cursor-plugin/issues)
 - **Email**: support@adverant.ai
 - **Discord**: [Join our community](https://discord.gg/adverant)
+
+---
 
 ## License
 
