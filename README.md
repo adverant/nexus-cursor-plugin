@@ -818,7 +818,7 @@ npm test -- --grep "visualization"  # Run visualization tests only
 
 ## Support
 
-- **Documentation**: [docs.adverant.ai](https://docs.adverant.ai)
+- **Documentation**: [adverant.ai/docs](https://adverant.ai/docs)
 - **Issues**: [GitHub Issues](https://github.com/adverant/nexus-cursor-plugin/issues)
 - **Email**: support@adverant.ai
 - **Discord**: [Join our community](https://discord.gg/adverant)
@@ -837,7 +837,7 @@ MIT License - see the [LICENSE](LICENSE) file for details.
   <br/><br/>
 
   <a href="https://adverant.ai">Website</a> •
-  <a href="https://docs.adverant.ai">Docs</a> •
+  <a href="https://adverant.ai/docs">Docs</a> •
   <a href="https://twitter.com/adverant">Twitter</a> •
   <a href="https://discord.gg/adverant">Discord</a>
 </div>

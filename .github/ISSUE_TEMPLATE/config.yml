@@ -1,7 +1,7 @@
 blank_issues_enabled: false
 contact_links:
   - name: Documentation
-    url: https://docs.adverant.ai/cursor-plugin
+    url: https://adverant.ai/docs/cursor-plugin
     about: Check our documentation for answers
   - name: Discord Community
     url: https://discord.gg/adverant

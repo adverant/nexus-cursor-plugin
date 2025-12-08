@@ -112,4 +112,4 @@ This is the first feature release. To upgrade:
 
 - [GitHub Releases](https://github.com/adverant/nexus-cursor-plugin/releases)
 - [npm Package](https://www.npmjs.com/package/@adverant/nexus-cursor-plugin)
-- [Documentation](https://docs.adverant.ai/cursor-plugin)
+- [Documentation](https://adverant.ai/docs/cursor-plugin)
