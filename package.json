@@ -57,7 +57,7 @@
     "tree-sitter-python": "^0.21.0",
     "tree-sitter-rust": "^0.21.0",
     "tree-sitter-typescript": "^0.21.0",
-    "zod": "^3.25.76"
+    "zod": "^4.2.0"
   },
   "devDependencies": {
     "@types/glob": "^8.1.0",
