@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.25.1",
-    "axios": "^1.6.0",
+    "axios": "^1.13.3",
     "glob": "^13.0.0",
     "pino": "^8.17.0",
     "simple-git": "^3.22.0",
